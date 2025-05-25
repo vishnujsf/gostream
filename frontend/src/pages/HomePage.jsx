@@ -129,12 +129,12 @@ const HomePage = () => {
                           {getLanguageFlag(user.nativeLanguage)}
                           Native: {capitialize(user.nativeLanguage)}
                         </span>
-                        {user.learningLanguage && ( 
+                        
                           <span className="badge badge-outline">
-                          {getLanguageFlag(user.learningLanguage)}
-                          Learning: {capitialize(user.learningLanguage)}
+                          {getLanguageFlag(user.learningLanguage || "unknown")}
+                          Learning: {user.learningLanguage ? capitialize(user.learningLanguage) : "Unknown"}
                         </span>
-                    )}
+                    
                       </div>
 
                       {user.bio && <p className="text-sm opacity-70">{user.bio}</p>}
